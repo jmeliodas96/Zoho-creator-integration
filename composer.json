@@ -1,6 +1,12 @@
 {
     "require": {
         "curl/curl": "^2.3",
-        "monolog/monolog": "^2.1"
+        "monolog/monolog": "^2.1",
+        "zohocrm/php-sdk": "^2.2"
+    },
+
+    "autoload": {
+      "psr-4": {"Acme\\": "src/"}
     }
+    
 }
