@@ -1,2 +1,18 @@
 2020-08-12 05:49:52 SEVERE: Failed to connect to MySQL: (2002) No connection could be made because the target machine actively refused it.
 
+2020-08-12 17:45:46 SEVERE: Failed to connect to MySQL: (2002) No connection could be made because the target machine actively refused it.
+
+2020-08-12 17:45:47 SEVERE: Getting result set failed: () 
+2020-08-12 17:45:47 SEVERE: Exception occured while getting OAuthTokens from DB(file::ZohoOAuthPersistenceHandler)(No Tokens exist for the given user-identifier,Please generate and try again.)
+zcrmsdk\oauth\exception\ZohoOAuthException Caused by:'No Tokens exist for the given user-identifier,Please generate and try again.' in C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\oauth\persistence\ZohoOAuthPersistenceHandler.php(45)
+#0 C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\oauth\ZohoOAuthClient.php(38): zcrmsdk\oauth\persistence\ZohoOAuthPersistenceHandler->getOAuthTokens('jmena0396@gmail...')
+#1 C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\crm\utility\ZCRMConfigUtil.php(104): zcrmsdk\oauth\ZohoOAuthClient->getAccessToken('jmena0396@gmail...')
+#2 C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\crm\api\APIRequest.php(88): zcrmsdk\crm\utility\ZCRMConfigUtil::getAccessToken()
+#3 C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\crm\api\APIRequest.php(138): zcrmsdk\crm\api\APIRequest->authenticateRequest()
+#4 C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\crm\api\handler\MetaDataAPIHandler.php(34): zcrmsdk\crm\api\APIRequest->getBulkAPIResponse()
+#5 C:\Users\Usuario\projects\zoho\vendor\zohocrm\php-sdk\src\crm\setup\restclient\ZCRMRestClient.php(51): zcrmsdk\crm\api\handler\MetaDataAPIHandler->getAllModules()
+#6 C:\Users\Usuario\projects\zoho\src\init.php(55): zcrmsdk\crm\setup\restclient\ZCRMRestClient->getAllModules()
+#7 C:\Users\Usuario\projects\zoho\src\init.php(68): novazysCrm->getAllModules()
+#8 {main}
+2020-08-12 17:45:47 INFO: Access Token has expired. Hence refreshing.
+2020-08-12 17:48:26 INFO: Access Token has expired. Hence refreshing.

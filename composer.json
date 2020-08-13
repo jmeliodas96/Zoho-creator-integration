@@ -2,7 +2,9 @@
     "require": {
         "curl/curl": "^2.3",
         "monolog/monolog": "^2.1",
-        "zohocrm/php-sdk": "^2.2"
+        "zohocrm/php-sdk": "^2.2",
+        "php-curl-class/php-curl-class": "^8.8",
+        "vlucas/phpdotenv": "^5.1"
     },
 
     "autoload": {
