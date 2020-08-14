@@ -11,14 +11,9 @@
     include_once '../class/record.php';
 
     $items = new record();
-
-    // $Fecha_de_Pago = "10-Aug-2020";
-    // $Cliente =  "Jimmy Mena";
-    // $Salario =  "1200";
-    // $Estado = "Pendiente";
-    
     $bodyRequest = json_decode(file_get_contents("php://input"));
     $Fecha_de_Pago = $bodyRequest->Fecha_de_Pago;
+    $Cliente =  $bodyRequest->Cliente;;
     $Salario = $bodyRequest->Salario;
     $Estado = $bodyRequest->Estado;
 
@@ -26,11 +21,13 @@
     $obj = array(
       'data'=> array( 
         'Fecha_de_Pago'=>$Fecha_de_Pago,
+        "Cliente"=>$Cliente,
         'Salario'=>$Salario,
         'Estado'=>$Estado,
       ),
 
       'results'=>array(
+
         'message'=>true,
         'tasks'=>true,
       )
@@ -42,8 +39,8 @@
 
 
     if($items->curl->httpStatusCode == 200){
-        echo 'Employee created successfully.';
+        echo 'Payment created successfully.';
     } else{
-        echo 'Employee could not be created.';
+        echo 'Payment could not be created.';
     }
 ?>

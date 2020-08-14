@@ -12,10 +12,11 @@
 
     $items = new record();
 
-    $Nombre_Completo = "Jimmy Mena";
-    $Correo_Electr_nico =  "jmena0396@gmail.com";
-    $Tel_fono =  "+16103948336";
-    $Observaciones = "Nothing";
+    $bodyRequest = json_decode(file_get_contents("php://input"));
+    $Nombre_Completo = $bodyRequest->Nombre_Completo;
+    $Correo_Electr_nico = $bodyRequest->Correo_Electr_nico;
+    $Tel_fono = $bodyRequest->Tel_fono;
+    $Observaciones = $bodyRequest->Observaciones;
     
     $obj = array(
       'data'=> array( 

@@ -50,29 +50,17 @@ class record {
   }
   
   // get records
-  public function getEmployees(){
+  public function getPayments(){
 
-    $token = $this->getRefreshToken();
-
-    // $token = "1000.cb5ae6ea13dd559378d31558dd81ed87.1bd00f5fe058f2a862a2cc168d8608b5";
-    // $module="Contacts";
-    // $record = ZCRMRestClient::getInstance()->getRecordInstance($module, "{record_id}"); // To get record instance
-                                                       
+    $token = $this->getRefreshToken();                                                       
     $this->curl->setHeader('Content-Type', 'application/json ');
     $this->curl->setHeader('Authorization', 'Zoho-oauthtoken '.$token);
     $this->curl->get('https://creator.zoho.com/api/v2/user1_demo115/evaluaci-n/report/Pago_Report');
 
-  
-    // var_dump($this->curl->requestHeaders);
-
     if ($this->curl->error) {
         // if token is expired, then refresh for be authenticate again 
-
         echo 'Error: ' . $this->curl->errorCode . ': ' . $this->curl->errorMessage . "\n";
     } else {
-        // echo 'Response:' . "\n";
-        // var_dump($this->curl->response);
-        
         $response = $this->curl->response;
         return $response;
     }    
@@ -80,18 +68,31 @@ class record {
   }
 
 
-  // CREATE ClIENT
+  // get records
+  public function getClients(){
+
+    $token = $this->getRefreshToken();                                                       
+    $this->curl->setHeader('Content-Type', 'application/json ');
+    $this->curl->setHeader('Authorization', 'Zoho-oauthtoken '.$token);
+    $this->curl->get('https://creator.zoho.com/api/v2/user1_demo115/evaluaci-n/report/Cliente_Report');
+
+    if ($this->curl->error) {
+        // if token is expired, then refresh for be authenticate again 
+        echo 'Error: ' . $this->curl->errorCode . ': ' . $this->curl->errorMessage . "\n";
+    } else {
+        $response = $this->curl->response;
+        return $response;
+    }    
+
+  }
+
+  // Create client
   public function createEmployee($object){
 
     $token = $this->getRefreshToken();
-
-    // $token = "1000.cb5ae6ea13dd559378d31558dd81ed87.1bd00f5fe058f2a862a2cc168d8608b5";
-    // $module="Contacts";
-    // $record = ZCRMRestClient::getInstance()->getRecordInstance($module, "{record_id}"); // To get record instance
     $this->curl->setHeader('Content-Type', 'application/json ');
     $this->curl->setHeader('Authorization', 'Zoho-oauthtoken '.$token);
     $this->curl->post('https://creator.zoho.com/api/v2/user1_demo115/evaluaci-n/form/Cliente', $object);
-
 
     if ($this->curl->error) {
         // if token is expired, then refresh for be authenticate again 
@@ -104,22 +105,16 @@ class record {
   } 
 
 
-  // CREATE PAYMENT
+  // create payment
   public function createPayment($object){
 
     $token = $this->getRefreshToken();
-
-    // $token = "1000.cb5ae6ea13dd559378d31558dd81ed87.1bd00f5fe058f2a862a2cc168d8608b5";
-    // $module="Contacts";
-    // $record = ZCRMRestClient::getInstance()->getRecordInstance($module, "{record_id}"); // To get record instance
     $this->curl->setHeader('Content-Type', 'application/json ');
     $this->curl->setHeader('Authorization', 'Zoho-oauthtoken '.$token);
     $this->curl->post('https://creator.zoho.com/api/v2/user1_demo115/evaluaci-n/form/Pago', $object);
 
-
     if ($this->curl->error) {
         // if token is expired, then refresh for be authenticate again 
-
         echo 'Error: ' . $this->curl->errorCode . ': ' . $this->curl->errorMessage . "\n";
     } else {        
         $response = $this->curl->response;

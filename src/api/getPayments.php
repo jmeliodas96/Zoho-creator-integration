@@ -11,7 +11,7 @@
 
 
     $items = new record();
-    $stmt = $items->getEmployees();
+    $stmt = $items->getPayments();
 
     // counter
     // $itemCount = count($stmt);
