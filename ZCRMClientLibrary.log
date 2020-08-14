@@ -16,3 +16,11 @@ zcrmsdk\oauth\exception\ZohoOAuthException Caused by:'No Tokens exist for the gi
 #8 {main}
 2020-08-12 17:45:47 INFO: Access Token has expired. Hence refreshing.
 2020-08-12 17:48:26 INFO: Access Token has expired. Hence refreshing.
+2020-08-13 20:13:38 SEVERE: Failed to connect to MySQL: (2002) No connection could be made because the target machine actively refused it.
+
+2020-08-13 20:13:39 SEVERE: Deleting  oauthtokens failed: () 
+2020-08-13 20:13:43 SEVERE: Failed to connect to MySQL: (2002) No connection could be made because the target machine actively refused it.
+
+2020-08-13 20:13:44 SEVERE: OAuth token insertion failed: () 
+2020-08-14 02:03:21 INFO: Access Token has expired. Hence refreshing.
+2020-08-14 04:04:51 INFO: Access Token has expired. Hence refreshing.
