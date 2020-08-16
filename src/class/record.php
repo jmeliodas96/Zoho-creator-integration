@@ -31,19 +31,12 @@ class record {
 
 
     // Generate access token and refresh token  
-    // ZCRMRestClient->setCurrentUser()
     ZCRMRestClient::initialize($configuration);
     $oAuthClient = ZohoOAuth::getClientInstance();
-    // Generate by refresh token
-    // $refreshToken = "1000.4f5dcdbca286fffc85e15856b0799746.bcf6c96899348ff60ba04da819528066";
     $userIdentifier = "user1@demo1.novazys.com";
     
-    // Generate by grant token
-    // $grantToken = "1000.2ab2f27f2b1a06ddaac903a91d834ca8.eec33fec761574089ccdf9ffaa3cbb6b";
-    // $oAuthTokens = $oAuthClient->generateAccessToken($grantToken);
 
     // refreshAccessToken
-    // $oAuthTokens = $oAuthClient->refreshAccessToken($refreshToken,$userIdentifier);
     $oAuthTokens = $oAuthClient->getAccessToken($userIdentifier);
 
     return $oAuthTokens;
