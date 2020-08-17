@@ -19,9 +19,6 @@ class record {
   // get refresh token
   public function getRefreshToken(){
 
-    $client_id = "1000.JYYT5YSHWFDU0C350KETGIU80MKTLR";
-    $client_secret = "c6e21ba320f9afded6941c4a6b910ba5c9e32de6f6";
-
     $redirect_url = "https://accounts.zoho.com";
     $user_email_id = "user1@demo1.novazys.com";
     $apiVersion = "v2";
